@@ -46,6 +46,11 @@ plt.xlabel('Day of the Year')
 plt.ylabel('SST [$^{\circ}$C]')
 plt.title('NDBC ' + station + ' ' + txt)
 
+plt.savefig('/figs/sst_dayofyear_' + 
+            str(year1) + '-' + str(year2) + '_ndbc_' + station + '_clim.pdf',
+            bbox_inches='tight'
+            )
+
 plt.show()
 
 
