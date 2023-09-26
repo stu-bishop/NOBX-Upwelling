@@ -1,0 +1,6 @@
+numpy
+matplotlib
+xarray
+netcdf4
+datetime
+sys
