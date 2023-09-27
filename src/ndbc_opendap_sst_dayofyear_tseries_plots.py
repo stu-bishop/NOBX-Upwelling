@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import xarray as xr
 import datetime as dt
-import sys
+import os, sys
 
 sys.path.append('/modules/')
 import ndbc_buoy_package as buoy
@@ -46,11 +46,12 @@ plt.xlabel('Day of the Year')
 plt.ylabel('SST [$^{\circ}$C]')
 plt.title('NDBC ' + station + ' ' + txt)
 
-plt.savefig('/figs/sst_dayofyear_' + 
-            str(year1) + '-' + str(year2) + '_ndbc_' + station + '_clim.pdf',
-            bbox_inches='tight'
-            )
-
+### Save Figure as a pdf
+fig_path = os.path.abspath('')
+figname = '/figs/sst_dayofyear_' + str(year1) + '-' + str(year2) + \
+        '_ndbc_' + station + '_clim.pdf'
+figdir = fig_path + figname
+plt.savefig(figdir, bbox_inches='tight')
 plt.show()
 
 
